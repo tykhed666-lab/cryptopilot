@@ -1,0 +1,51 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+dist/
+build/
+
+# IDE and OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Runtime data
+logs/
+data/
+volumes/
+models/
+cache/
+tmp/
+temp/
+
+# Databases and object storage
+milvus_data/
+mongo_data/
+redis_data/
+minio_data/
+
+# Frontend
+node_modules/
+.vite/
+frontend/dist/

@@ -1,0 +1,12 @@
+# Keep repository text files consistent across Windows, Linux, and CI.
+* text=auto eol=lf
+
+# Preserve binary files without line-ending conversion.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pdf binary
+*.zip binary
+*.rar binary
