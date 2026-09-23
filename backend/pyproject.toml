@@ -1,0 +1,76 @@
+[project]
+name = "cryptopilot"
+version = "0.1.0"
+description = "description = A dual-channel Binance research and trading agent with RAG and human-in-the-loop risk controls."
+readme = "README.md"
+authors = [
+    { name = "tykhed666-lab", email = "tykhed666@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.141.1",
+    "httpx>=0.28.1",
+    "orjson>=3.12.0",
+    "pydantic>=2.13.5",
+    "pydantic-settings>=2.15.0",
+    "redis>=8.1.0",
+    "structlog>=26.1.0",
+    "uvicorn[standard]>=0.53.0",
+    "websockets>=17.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.13.0",
+    "mypy>=2.3.1",
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
+    "respx>=0.23.1",
+    "ruff>=0.16.8",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "ASYNC"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src", "tests"]
+warn_unused_configs = true
+show_error_codes = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = [
+  "--strict-config",
+  "--strict-markers",
+  "--cov=cryptopilot",
+  "--cov-report=term-missing",
+]
+markers = [
+  "live: requires external network and is never run in CI",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["cryptopilot"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
