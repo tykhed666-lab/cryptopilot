@@ -193,12 +193,12 @@ BinanceGateway
 
 四种运行模式必须由枚举和配置硬隔离：
 
-| 模式 | 数据 | 执行 | 默认状态 |
-|---|---|---|---|
+| 模式            | 数据 | 执行 | 默认状态 |
+|-----------------|---|---|---|
 | `research_only` | REST/WS + RAG + Web | 禁止下单 | 默认 |
-| `paper` | REST/WS 实时价格 | 内部模拟账本 | 默认可用 |
-| `testnet` | Binance Testnet | Spot Testnet | 配置后可用 |
-| `live_agentic` | REST/WS + Agent OS MCP | Agentic 子账户真实 Spot | 默认关闭 |
+| `paper`         | REST/WS 实时价格 | 内部模拟账本 | 默认可用 |
+| `spot_testnet`  | Binance Testnet | Spot Testnet | 配置后可用 |
+| `live_agentic`  | REST/WS + Agent OS MCP | Agentic 子账户真实 Spot | 默认关闭 |
 
 统一接口至少包括：
 
